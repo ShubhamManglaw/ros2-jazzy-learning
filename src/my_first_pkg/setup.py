@@ -26,7 +26,8 @@ setup(
     entry_points={
         'console_scripts': [
             'publisher_node = my_first_pkg.publisher_node:main',
-          'subscriber_node = my_first_pkg.subscriber_node:main'
+'subscriber_node = my_first_pkg.subscriber_node:main',
+'distance_publisher = my_first_pkg.distance_publisher:main',
         ],
     },
 )
