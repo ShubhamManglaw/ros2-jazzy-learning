@@ -6,6 +6,9 @@
   <description>TODO: Package description</description>
   <maintainer email="shubhammanglaw@gmail.com">shubham</maintainer>
   <license>TODO: License declaration</license>
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>

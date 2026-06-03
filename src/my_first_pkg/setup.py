@@ -31,7 +31,10 @@ setup(
 'distance_subscriber = my_first_pkg.distance_subscriber:main',
 'number_publisher = my_first_pkg.number_publisher:main',
 'number_doubler = my_first_pkg.number_doubler:main',
-'number_printer = my_first_pkg.number_printer:main'
+'number_printer = my_first_pkg.number_printer:main',
+'velocity_source = my_first_pkg.velocity_source:main',
+'velocity_limiter = my_first_pkg.velocity_limiter:main',
+'velocity_monitor = my_first_pkg.velocity_monitor:main'
         ],
     },
 )
