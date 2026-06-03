@@ -29,6 +29,9 @@ setup(
 'subscriber_node = my_first_pkg.subscriber_node:main',
 'distance_publisher = my_first_pkg.distance_publisher:main',
 'distance_subscriber = my_first_pkg.distance_subscriber:main',
+'number_publisher = my_first_pkg.number_publisher:main',
+'number_doubler = my_first_pkg.number_doubler:main',
+'number_printer = my_first_pkg.number_printer:main'
         ],
     },
 )
