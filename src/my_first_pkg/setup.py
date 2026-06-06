@@ -35,7 +35,9 @@ setup(
 'velocity_limiter = my_first_pkg.velocity_limiter:main',
 'velocity_monitor = my_first_pkg.velocity_monitor:main',
 'robot_status_publisher = my_first_pkg.robot_status_publisher:main',
-'add_server = my_first_pkg.add_server:main'
+'add_server = my_first_pkg.add_server:main',
+'add_client = my_first_pkg.add_client:main'
+
         ],
     },
 )
