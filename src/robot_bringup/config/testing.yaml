@@ -1,0 +1,4 @@
+velocity_limiter:
+  ros__parameters:
+    max_linear_speed: 0.1
+    max_angular_speed: 0.2
