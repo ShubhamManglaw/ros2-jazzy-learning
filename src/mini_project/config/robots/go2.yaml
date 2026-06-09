@@ -1,0 +1,5 @@
+robot_info:
+  ros__parameters:
+    robot_name: go2
+    wheel_radius: 0.0
+    max_payload: 12.0

@@ -4,6 +4,7 @@ from geometry_msgs.msg import Twist
 class VelocitySource(Node):
     def __init__(self):
         super().__init__('velocity_source')
+        self.log_counter = 0
         self.publisher_ = self.create_publisher(
             Twist,
             '/cmd_vel_raw',
@@ -18,9 +19,11 @@ class VelocitySource(Node):
         msg.linear.x = 2.0
         msg.angular.z = 1.5
         self.publisher_.publish(msg)
-        self.get_logger().info(
-            f'linear.x={msg.linear.x}, angular.z={msg.angular.z}'
-        )
+        self.log_counter += 1
+        if self.log_counter % 5 == 0:
+            self.get_logger().info(
+                f'linear.x={msg.linear.x}, angular.z={msg.angular.z}'
+                )
 def main(args=None):
     rclpy.init(args=args)
     node= VelocitySource()
