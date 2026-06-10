@@ -1,0 +1,10 @@
+robot_info:
+  ros__parameters:
+    environment_name: testing
+
+    linear_speed_factor: 1.2
+    angular_speed_factor: 1.2
+
+    acceleration_factor: 1.2
+
+    stopping_distance_factor: 1.0

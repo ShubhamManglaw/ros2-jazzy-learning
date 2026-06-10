@@ -1,0 +1,14 @@
+robot_info:
+  ros__parameters:
+    robot_name: delivery_bot
+    robot_type: outdoor_delivery_agv
+
+    robot_weight_kg: 35.0
+    payload_capacity_kg: 25.0
+
+    max_linear_speed: 2.0
+    max_angular_speed: 1.2
+
+    max_acceleration: 1.2
+
+    stopping_distance: 1.0

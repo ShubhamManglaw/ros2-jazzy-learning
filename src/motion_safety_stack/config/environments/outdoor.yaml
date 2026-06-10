@@ -1,0 +1,10 @@
+robot_info:
+  ros__parameters:
+    environment_name: outdoor
+
+    linear_speed_factor: 0.8
+    angular_speed_factor: 0.8
+
+    acceleration_factor: 0.7
+
+    stopping_distance_factor: 1.0

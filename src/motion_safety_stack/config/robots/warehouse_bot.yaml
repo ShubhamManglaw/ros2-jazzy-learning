@@ -1,0 +1,14 @@
+robot_info:
+  ros__parameters:
+    robot_name: warehouse_bot
+    robot_type: shelf_carrying_agv
+
+    robot_weight_kg: 120.0
+    payload_capacity_kg: 250.0
+
+    max_linear_speed: 1.5
+    max_angular_speed: 0.8
+
+    max_acceleration: 0.8
+
+    stopping_distance: 2.5

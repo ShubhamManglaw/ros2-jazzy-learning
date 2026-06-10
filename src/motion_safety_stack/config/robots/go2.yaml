@@ -1,0 +1,14 @@
+robot_info:
+  ros__parameters:
+    robot_name: go2
+    robot_type: quadruped
+
+    robot_weight_kg: 15.0
+    payload_capacity_kg: 5.0
+
+    max_linear_speed: 3.5
+    max_angular_speed: 2.5
+
+    max_acceleration: 1.0
+
+    stopping_distance: 1.5
