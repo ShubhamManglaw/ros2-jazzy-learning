@@ -1,4 +1,4 @@
-robot_info:
+/**:
   ros__parameters:
     robot_name: go2
     robot_type: quadruped
@@ -10,5 +10,9 @@ robot_info:
     max_angular_speed: 2.5
 
     max_acceleration: 1.0
+    max_deceleration: 1.0
 
     stopping_distance: 1.5
+
+    corner_linear_speed: 1.0
+    corner_angular_speed: 1.0

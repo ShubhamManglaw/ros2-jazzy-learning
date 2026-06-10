@@ -44,7 +44,29 @@ def generate_launch_description():
                 robot_config,
                 environment_config
             ]
+        ),
+                Node(
+            package='motion_safety_stack',
+            executable='velocity_source',
+            name='velocity_source',
+            parameters=[
+                robot_config,
+                environment_config
+            ]
+        ),
+        Node(
+            package='motion_safety_stack',
+            executable='velocity_limiter',
+            name='velocity_limiter',
+            parameters=[
+                robot_config,
+                environment_config
+            ]
+        ),
+        Node(
+            package='motion_safety_stack',
+            executable='velocity_monitor',
+            name='velocity_monitor'
         )
-
 
     ])

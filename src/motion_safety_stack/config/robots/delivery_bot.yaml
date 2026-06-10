@@ -12,3 +12,6 @@ robot_info:
     max_acceleration: 1.2
 
     stopping_distance: 1.0
+    corner_linear_speed: 1.0
+    corner_angular_speed: 1.0
+    max_deceleration: 1.0

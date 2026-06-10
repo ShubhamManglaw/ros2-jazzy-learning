@@ -1,4 +1,4 @@
-robot_info:
+/**:
   ros__parameters:
     environment_name: indoor
 
@@ -6,5 +6,6 @@ robot_info:
     angular_speed_factor: 0.6
 
     acceleration_factor: 0.4
+    deceleration_factor: 1.0
 
     stopping_distance_factor: 1.2

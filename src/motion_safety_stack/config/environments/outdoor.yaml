@@ -8,3 +8,4 @@ robot_info:
     acceleration_factor: 0.7
 
     stopping_distance_factor: 1.0
+    deceleration_factor: 1.0
