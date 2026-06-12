@@ -15,7 +15,7 @@ class VelocityLimiter(Node):
 
         self.publisher_ = self.create_publisher(
             Twist,
-            '/cmd_vel',
+            '/cmd_vel_safe',
             10
         )
 

@@ -11,6 +11,9 @@ class VelocityMonitor(Node):
             self.velocity_callback,
             10
         )
+        self.get_logger().info(
+            'Velocity Monitor Started'
+        )
     def velocity_callback(self,msg):
         self.log_counter += 1
         if self.log_counter % 5 == 0:

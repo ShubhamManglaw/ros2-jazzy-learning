@@ -32,6 +32,7 @@ setup(
             'velocity_source = motion_safety_stack.velocity_source:main',
             'velocity_limiter = motion_safety_stack.velocity_limiter:main',
             'velocity_monitor = motion_safety_stack.velocity_monitor:main',
+            'velocity_watchdog = motion_safety_stack.velocity_watchdog:main',
         ],
     },
 )

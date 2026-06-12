@@ -8,7 +8,7 @@ class VelocityLimiter(Node):
         self.get_logger().info('Velocity Limiter Started')
         self.cmd_vel_sub=self.create_subscription(Twist,'/cmd_vel_raw',self.cmd_vel_callback,10)
         self.obstacle_sub=self.create_subscription(Float32,'/obstacle_distance',self.obstacle_callback,10)
-        self.cmd_vel_pub=self.create_publisher(Twist,'/cmd_vel',10)
+        self.cmd_vel_pub=self.create_publisher(Twist,'/cmd_vel_safe',10)
         self.timer = self.create_timer(
             0.1,
             self.timer_callback

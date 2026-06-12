@@ -9,3 +9,6 @@
     deceleration_factor: 1.0
 
     stopping_distance_factor: 1.2
+    watchdog_enabled: true
+
+    timeout_seconds: 2.0

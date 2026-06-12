@@ -14,6 +14,10 @@ class VelocitySource(Node):
             1.0,
             self.publish_velocity
         )
+        self.get_logger().info(
+            'Velocity Source Started'
+        )
+        
     def publish_velocity(self):
         msg = Twist()
         msg.linear.x = 2.0

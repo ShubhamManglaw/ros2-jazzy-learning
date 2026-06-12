@@ -9,3 +9,6 @@ robot_info:
 
     stopping_distance_factor: 1.0
     deceleration_factor: 1.0
+    watchdog_enabled: true
+
+    timeout_seconds: 2.0

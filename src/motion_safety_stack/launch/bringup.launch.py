@@ -67,6 +67,15 @@ def generate_launch_description():
             package='motion_safety_stack',
             executable='velocity_monitor',
             name='velocity_monitor'
-        )
+        ),
+        Node(
+    package='motion_safety_stack',
+    executable='velocity_watchdog',
+    name='velocity_watchdog',
+    parameters=[
+        robot_config,
+        environment_config
+    ]
+),
 
     ])

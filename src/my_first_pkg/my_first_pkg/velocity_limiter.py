@@ -6,7 +6,7 @@ class VelocityLimiter(Node):
         super().__init__('velocity_limiter')
         self.declare_parameter("max_linear_speed",0.5)
         self.declare_parameter("max_angular_speed",1.0)
-        self.publisher_=self.create_publisher(Twist,'/cmd_vel',10)
+        self.publisher_=self.create_publisher(Twist,'/cmd_vel_safe',10)
         self.subscription=self.create_subscription(Twist,'/cmd_vel_raw',self.velocity_callback,10)
         self.get_logger().info("Velocity Limiter Started")
     def velocity_callback(self,msg):

@@ -61,7 +61,7 @@ class VelocitySource(Node):
         cmd = Twist()
         obstacle = Float32()
         if self.state=='accelerate':
-            cmd.linear.x=1.75
+            cmd.linear.x=self.straight_speed
             cmd.angular.z = 0.0
             if self.state_time>=self.acceleration_duration:
                 self.state = 'straight'
