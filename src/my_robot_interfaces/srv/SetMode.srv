@@ -1,0 +1,4 @@
+uint8 desired_mode
+---
+bool success
+uint8 current_mode

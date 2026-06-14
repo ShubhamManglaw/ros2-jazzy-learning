@@ -1,0 +1,8 @@
+std_msgs/Header header
+string robot_name
+float32 battery_percentage
+float32 cpu_usage_percentage
+float32 sensor1_temp
+float32 sensor2_temp
+float32 sensor3_temp
+float32 sensor4_temp
