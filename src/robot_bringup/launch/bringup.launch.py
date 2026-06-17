@@ -5,7 +5,9 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch.conditions import IfCondition
 from ament_index_python.packages import get_package_share_directory
-
+from launch.actions import RegisterEventHandler
+from launch.event_handlers import OnProcessStart
+from launch.actions import LogInfo
 import os
 
 
@@ -19,6 +21,16 @@ def generate_launch_description():
         default_value="false",
         description="Simulation mode"
     )
+    robot_namespace_arg = DeclareLaunchArgument(
+        "robot_namespace",
+        default_value="robot1",
+        description="Robot namespace"
+    )
+
+    robot_namespace = LaunchConfiguration(
+        "robot_namespace"
+    )
+
     simulation = LaunchConfiguration("simulation")
 
     management_launch = IncludeLaunchDescription(
@@ -52,6 +64,7 @@ def generate_launch_description():
     )
     return LaunchDescription([
         simulation_arg,
+        robot_namespace_arg,
         management_launch,
         telemetry_launch,
         navigation_launch
