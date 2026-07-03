@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<robot 
+    name="newton_bot"
+    xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- Global Properties -->
+    <xacro:property name="wheel_radius" value="0.10"/>
+    <xacro:property name="wheel_width" value="0.05"/>
+    <xacro:property name="robot_length" value="0.50"/>
+    <xacro:property name="robot_width" value="0.40"/>
+
+    <!-- Include Robot Parts -->
+    <xacro:include filename="base.xacro"/>
+    <xacro:include filename="wheels.xacro"/>
+    <xacro:include filename="sensors.xacro"/>
+    <xacro:include filename="materials.xacro"/>
+
+    <!-- Robot Components -->
+
+    <xacro:base/>
+    <xacro:wheel
+        name="front_left_wheel"
+        parent="base_link"
+        x="0.20"
+        y="0.20"/>
+    <xacro:wheel
+        name="front_right_wheel"
+        parent="base_link"
+        x="0.20"
+        y="-0.20"/>
+    <xacro:wheel
+        name="rear_left_wheel"
+        parent="base_link"
+        x="-0.20"
+        y="0.20"/>
+    <xacro:wheel
+        name="rear_right_wheel"
+        parent="base_link"
+        x="-0.20"
+        y="-0.20"/>
+    
+    <!-- Camera -->
+    <xacro:camera/>
+</robot>
+
+    

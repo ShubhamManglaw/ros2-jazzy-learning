@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="base">
+
+        <link name="base_link">
+
+            <!-- Visual Representation -->
+            <visual>
+                <origin xyz="0 0 0.05"/>
+                <geometry>
+                    <box size="${robot_length} ${robot_width} 0.10"/>
+                </geometry>
+                <material name="blue"/>
+            </visual>
+
+            <!-- Collision Model -->
+            <collision>
+                <origin xyz="0 0 0.05"/>
+                <geometry>
+                    <box size="${robot_length} ${robot_width} 0.10"/>
+                </geometry>
+            </collision>
+
+            <!-- Physical Properties -->
+            <inertial>
+
+                <origin xyz="0 0 0.05"/>
+
+                <mass value="5.0"/>
+
+                <inertia
+                    ixx="0.10"
+                    ixy="0.0"
+                    ixz="0.0"
+                    iyy="0.10"
+                    iyz="0.0"
+                    izz="0.10"/>
+
+            </inertial>
+
+        </link>
+
+    </xacro:macro>
+
+</robot>
