@@ -12,6 +12,7 @@ def generate_launch_description():
     pkg_path = FindPackageShare("my_robot_description")
     xacro_file = PathJoinSubstitution([pkg_path, "urdf", "robot.urdf.xacro"])
     rviz_config = PathJoinSubstitution([pkg_path,"rviz","display.rviz"])
+    world_file = PathJoinSubstitution([pkg_path, "worlds", "empty_lidar.sdf"])
     robot_description = ParameterValue(
         Command([
             FindExecutable(name="xacro"),
@@ -30,7 +31,7 @@ def generate_launch_description():
             ])
         ),
         launch_arguments={
-            "gz_args": "empty.sdf"
+            "gz_args": [world_file]
         }.items()
     )
     return LaunchDescription([
@@ -39,9 +40,23 @@ def generate_launch_description():
             package="robot_state_publisher",
             executable="robot_state_publisher",
             parameters=[{
-                "robot_description": robot_description
+                "robot_description": robot_description,
+                "use_sim_time": True,
             }],
             output="screen"
+        ),
+        Node(
+            package="ros_gz_bridge",
+            executable="parameter_bridge",
+            arguments=[
+                "/cmd_vel@geometry_msgs/msg/Twist]gz.msgs.Twist",
+                "/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry",
+                "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
+                "/model/my_robot/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V",
+                "/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan",
+            ],
+            remappings=[("/model/my_robot/tf", "/tf")],
+            output="screen",
         ),
         TimerAction(
             period=5.0,
@@ -60,14 +75,12 @@ def generate_launch_description():
             ]
         ),
         Node(
-            package="joint_state_publisher_gui",
-            executable="joint_state_publisher_gui",
-            output="screen"
-        ),
-        Node(
             package="rviz2",
             executable="rviz2",
             arguments=["-d", rviz_config],
-            output="screen"
+            output="screen",
+            parameters=[{
+                "use_sim_time": True
+            }]
         )
     ])

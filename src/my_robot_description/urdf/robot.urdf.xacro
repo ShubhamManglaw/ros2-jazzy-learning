@@ -41,6 +41,7 @@
     
     <!-- Camera -->
     <xacro:camera/>
+    <xacro:lidar/>
 </robot>
 
     

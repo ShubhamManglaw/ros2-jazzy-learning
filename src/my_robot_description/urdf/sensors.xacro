@@ -8,15 +8,63 @@
                 </geometry>
                 <material name="red"/>
             </visual>
+
+            <collision>
+                <geometry>
+                    <box size="0.05 0.05 0.05"/>
+                </geometry>
+            </collision>
+
+            <inertial>
+                <mass value="0.05"/>
+                <inertia
+                    ixx="0.00002"
+                    ixy="0.0"
+                    ixz="0.0"
+                    iyy="0.00002"
+                    iyz="0.0"
+                    izz="0.00002"/>
+            </inertial>
         </link>
-        <joint
-            name="camera_joint"
-            type="fixed">
+
+        <joint name="camera_joint" type="fixed">
             <parent link="base_link"/>
             <child link="camera_link"/>
-            <origin
-                xyz="0.20 0 0.15"
-                rpy="0 0 0"/>
+            <origin xyz="0.20 0 0.15" rpy="0 0 0"/>
+        </joint>
+    </xacro:macro>
+
+    <xacro:macro name="lidar">
+        <link name="lidar_link">
+            <visual>
+                <geometry>
+                    <cylinder length="0.04" radius="0.03"/>
+                </geometry>
+                <material name="blue"/>
+            </visual>
+
+            <collision>
+                <geometry>
+                    <cylinder length="0.04" radius="0.03"/>
+                </geometry>
+            </collision>
+
+            <inertial>
+                <mass value="0.05"/>
+                <inertia
+                    ixx="0.00002"
+                    ixy="0.0"
+                    ixz="0.0"
+                    iyy="0.00002"
+                    iyz="0.0"
+                    izz="0.00002"/>
+            </inertial>
+        </link>
+
+        <joint name="lidar_joint" type="fixed">
+            <parent link="base_link"/>
+            <child link="lidar_link"/>
+            <origin xyz="0.1 0 0.2" rpy="0 0 0"/>
         </joint>
     </xacro:macro>
 </robot>

@@ -29,6 +29,10 @@ setup(
             os.path.join('share', package_name, 'rviz'),
             glob('rviz/*')
         ),
+        (
+            os.path.join('share', package_name, 'worlds'),
+            glob('worlds/*')
+        ),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
